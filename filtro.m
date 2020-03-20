@@ -11,7 +11,7 @@ plot(f,P) % plotando a FFT de 0Hz até fs/2 da amostra de áudio
 
 %% Filtro passa baixas FIR
 fa = 44100; % frequencia de amost
-sinal = u(:,1); %% sinal gravado
+sinal = u(:,1); % sinal gravado em mono
 fp = 600; % frequência de passagem
 fs = 1000; % frequência de corte
 % normalização das frequências

@@ -7,7 +7,7 @@ hd = ri_pb_ideal(wc, M)'; % resposta impulsiva do fpb ideal
 
 h = hd.*janela; % multiplicação entre os vetores
 sinal_filtrado = conv(h,sinal); %convolução entre os sinais
-%sound(sinal_filtrado,fa);
+% sound(sinal_filtrado,fa);
 S = fft(sinal_filtrado);
 L = length(S); % normalizando S
 P2 = abs(S/L);
