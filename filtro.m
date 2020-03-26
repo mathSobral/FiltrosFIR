@@ -1,12 +1,16 @@
 close all;
-[u,fs] = audioread('sinal_ruido.wav');
-S = fft(u);
+[u,fs] = audioread('sinal_ruido.wav', [100000,101999] );
+S = fft_dec_freq(u, length(u));
 L = length(S); % normalizando S
 P2 = abs(S/L);
 P = P2(1:L/2+1);
 P(2:end-1) = 2*P(2:end-1);
 f = fs*(0:(L/2))/L;
 plot(f,P) % plotando a FFT de 0Hz até fs/2 da amostra de áudio
+title('Sinal de entrada x[n]')
+ylabel('Amplitude |X(e^j^w)|');
+xlabel('Frequência (Hz)');
+xlim([0 3000]);
 
 
 %% Filtro passa baixas FIR
